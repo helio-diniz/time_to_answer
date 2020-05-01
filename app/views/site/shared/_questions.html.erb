@@ -1,0 +1,47 @@
+<div class="jumbotron">
+  <h3> <%= msg_jumbotron %> </h3>
+</div>
+
+<% @questions.each do |question| %>
+  <%= form_with url: site_answer_path do |form|  %>
+    <div class="card">
+      <div class="card-header">
+        <span class="badge badge-info"> 
+          <%= link_to "#{question.subject.description} (#{question.subject.questions_count})", site_search_subject_path(question.subject_id, question.subject.description), style: 'color: white;'  %> 
+        </span>
+        <%= question.description %>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          <ul>
+            <% question.answers.each do |answer|%>
+              <div class="form-check">
+                <li style="list-style: none;"> 
+                  <%= radio_button_tag 'answer_id', answer.id, false, class:"form-check-input" %>
+                  <%= label_tag "answer_id_#{answer.id}", answer.description %> 
+                </li>
+              </div>
+            <% end %>
+            <li style="list-style: none;">
+              <%= form.submit "Responder", class:"btn btn-primary", id: "submit_#{question.id}"%>
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  <% end %>  
+<% end %>
+
+<% if user_signed_in? %>
+  <div class="cointainer">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <%= paginate @questions %>
+      </div>   
+    </div>
+  </div> 
+<% else %>
+    <div class="alert alert-warning" role="alert">
+      Efetue login para poder continuar respondendo as questões ...
+    </div>
+<% end %>

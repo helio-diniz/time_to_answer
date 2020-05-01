@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header"> <%= action_message %></h1>
+  </div>
+</div>
+
+
+<div class="row">
+
+  <% if @subject.errors.any? %>
+    <div class="alert alert-warning alert-dismissible fade show row" role="alert" style="width: 100%">
+
+        <ul>
+          <% @subject.errors.full_messages.each do |message| %>
+          <li> <%= message %> </li>
+          <% end %>
+        </ul>
+
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <% end %>
+
+  <div class="col-lg-12">
+    <div class="card container-fluid" >
+      <div class="card-body" >
+        <div class="row card-text">
+          <div clas="container_fluid">
+            <%= form_with(model: [ :admins_backoffice, @subject ], local: true) do |form| %>
+              <h5 class="card-title"> <%= @question.model_name.human %> </h5>
+              <div class="form-group">
+                <%= form.label :description %>
+                <%= form.text_field :description, class:"form-control", placeholder:"Descrição do assunto/área" %>
+              </div>
+              <button type="submit" class="btn btn-primary">Salvar</button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>

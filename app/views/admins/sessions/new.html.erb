@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-xl-10 col-lg-12 col-md-9">
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <!-- imagem
+          <div class="col-lg-6 d-none d-lg-block bg-login-image"></div> -->
+          <div class= "col-lg-3"> </div>
+          <div class="col-lg-6">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Login Administrativo</h1>
+              </div>
+
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "user") do |f| %>                
+                <div class="form-group" id="email_group">
+                  <%= f.email_field :email, autofocus: true, placeholder: "E-mail", class: "form-control form-control-user" %>
+                </div>
+
+                <div class="form-group" id="password_group">
+                  <%= f.password_field :password, placeholder: "Password", class: "form-control form-control-user"  %>
+                </div>
+
+                <% if devise_mapping.rememberable? %>
+                  <div class="form-group" id="remember_me_group">
+                    <div class="custom-control custom-checkbox small">
+                      <%= f.check_box :remember_me, class: "custom-control-input" %>
+                      <%= f.label :remember_me, class: "custom-control-label" %> Lembrar-me
+                    </div>
+                  </div>
+                <% end %>  
+                
+                <%= f.submit "Entrar", class: "btn btn-primary btn-user btn-block" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
