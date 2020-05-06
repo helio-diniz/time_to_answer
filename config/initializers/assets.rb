@@ -23,4 +23,4 @@ Rails.application.config.assets.precompile += %w( admins_backoffice.js admins_ba
 Rails.application.config.assets.precompile += %w( sb-admin-2.min.js sb-admin-2.min.css, custom.min.js, custom.min.css, navbar-top-fixed.css )
 
 # pre-compilaação para vendor/assets
-Rails.application.config.assets.precompile += %w( jquery/dist/jquery.min jquery-2.2.3/dist/jquery.min.js bootstrap-4.3.1/bootstrap.bundle.js bootstrap-4.3.1/bootstrap.css )
+Rails.application.config.assets.precompile += %w( jquery-2.2.3/dist/jquery.min.js bootstrap-4.3.1/bootstrap.bundle.js bootstrap-4.3.1/bootstrap.css )
