@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.13.0"
+lock "~> 3.14.0"
 
 set :application, 'timetoanswer'              # Nome da sua aplicação          
 set :repo_url, 'https://github.com/helio-diniz/time_to_answer.git'    # Repositório git do seu projeto
