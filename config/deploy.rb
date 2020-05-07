@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.14.0"
 
-set :application, 'timetoanswer'              # Nome da sua aplicação          
+set :application, 'time_to_answer'              # Nome da sua aplicação          
 set :repo_url, 'https://github.com/helio-diniz/time_to_answer.git'    # Repositório git do seu projeto
 
 # Default branch is :master
@@ -9,7 +9,7 @@ set :repo_url, 'https://github.com/helio-diniz/time_to_answer.git'    # Reposit�
 set :branch, 'master'
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/var/www/timetoanswer"
+set :deploy_to, "/var/www/time_to_answer"
 
 # Default value for :format is :airbrussh.
 # Deixa colorido o log da aplicação quando está sendo levantada
