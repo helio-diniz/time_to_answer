@@ -52,6 +52,8 @@ set :default_env, {
 }
 
 before "deploy:assets:precompile", "deploy:yarn_install"
+# after 'deploy:publishing' event happens, it will be run the 'deploy:restart' rake task
+after 'deploy:finished', 'deploy:restart'
 
 namespace :deploy do
   desc 'Run rake yarn:install'
@@ -61,5 +63,11 @@ namespace :deploy do
         execute("cd #{release_path} && yarn install")
       end
     end
+  end
+
+  desc 'Restart unicorn'
+  task :restart do
+    invoke 'unicorn:stop'
+    invoke 'unicorn:start'
   end
 end
