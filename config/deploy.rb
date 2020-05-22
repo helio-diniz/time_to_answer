@@ -44,3 +44,9 @@ set :keep_releases, 5
 
 # No momento que enviar, mostra erro que acontecer com nível de debug
 set :log_level, :debug
+
+# Add or adjust default_env to append .npm-packages to $PATH:
+set :default_env, {
+   PATH: '$HOME/.npm/:$PATH',
+   NODE_ENVIRONMENT: 'production'
+}
