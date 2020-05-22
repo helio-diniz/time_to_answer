@@ -42,10 +42,10 @@ set :keep_releases, 5
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
-# No momento que enviar, mostra erro que acontecer com nível de debug
+# Show debug level errors
 set :log_level, :debug
 
-# Add or adjust default_env to append .npm-packages to $PATH:
+# Add or adjust default_env to append .npm to $PATH:
 set :default_env, {
    PATH: '$HOME/.npm/:$PATH',
    NODE_ENVIRONMENT: 'production'
